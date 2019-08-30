@@ -1,7 +1,7 @@
 <template>
     <el-row class="header-nav">
       <el-col :span="2">
-      <a href="http://192.168.1.9:8080/console.html"><img src="../../../assets/menu.png" alt=""></a>
+      <a href="http://localhost:8080/console.html"><img src="../../../assets/menu.png" alt=""></a>
       </el-col>
       <el-col :span="18" class="search">
           <i class="jd-header-icon-jd"></i>

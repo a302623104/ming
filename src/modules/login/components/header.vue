@@ -40,9 +40,9 @@
   .header {
     width: 100%;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     background-color: #fff;
-
+    border-bottom: 1px solid #e5e5e5;
     .icon {
       width: 20px;
       height: 20px;

@@ -15,13 +15,13 @@
       </el-col>
       <el-col :span="18" class="rightbox" >
         <div @touchstart="touchStart" @touchmove="move" @touchend="touchend" class="sortlist" v-bind:style="{top:boxtop + 'px'}" ref="box">
-          <dl v-for="value in sortData[index-1]">
-            <dt @touchstart="start"  @touchend="end">{{value.title}}</dt>
-            <dd v-for="item in value.list">
-              <img alt="" :src="item.url">
-              <span>{{item.name}}</span>
-            </dd>
-          </dl>
+            <dl v-for="value in sortData[index-1]">
+              <dt @touchstart="start"  @touchend="end">{{value.title}}</dt>
+              <dd v-for="item in value.list">
+                <img alt="" :src="item.url">
+                <span>{{item.name}}</span>
+              </dd>
+            </dl>
         </div>
       </el-col>
     </el-row>
