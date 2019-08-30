@@ -281,7 +281,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .rightbox {
     height: 650px;
     position: relative;

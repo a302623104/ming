@@ -74,7 +74,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .xiaoyuan{
       width: 100%;
       padding: 10px 10px 10px 10px;

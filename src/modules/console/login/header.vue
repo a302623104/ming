@@ -22,7 +22,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .header{
     width: 100%;
     border-bottom: 1px solid rgb(229, 229, 229);

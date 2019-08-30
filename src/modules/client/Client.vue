@@ -6,12 +6,13 @@
     <el-main>
       <router-view></router-view>
     </el-main>
-      <myFooter/>
+      <myFooter footindex="0"/>
   </el-container>
 </template>
+
 <script>
   import myHeader from './login/header.vue'
-  import myFooter from './login/footer.vue'
+  import myFooter from '../footer.vue'
     export default {
         name: 'client',
         components: {

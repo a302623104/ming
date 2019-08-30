@@ -1,11 +1,11 @@
 # demo
 
-## Project setup
+## 使用这个命令安装依赖包
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 使用这个命令来测试项目
 ```
 npm run serve
 ```

@@ -201,7 +201,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .leftBox{
     height: 650px;
     .leftlist{

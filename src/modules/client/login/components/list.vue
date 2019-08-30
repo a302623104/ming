@@ -119,7 +119,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .list {
     position: relative;
     top: -10px;

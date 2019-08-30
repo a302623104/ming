@@ -1,7 +1,7 @@
 <template>
     <div v-if="user">
       <admin/>
-      <myFoot/>
+      <myFoot footindex="4"/>
     </div>
     <div v-else>
       <nologin/>
@@ -11,7 +11,7 @@
 <script>
   import nologin from './components/no-login.vue'
   import admin from './components/admin.vue'
-  import myFoot from './footer.vue'
+  import myFoot from '../footer.vue'
   export default {
      name: "login.vue",
       components:{

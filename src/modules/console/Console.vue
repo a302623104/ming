@@ -6,13 +6,13 @@
     <el-main>
         <listbody/>
     </el-main>
-    <myFooter/>
+    <myFooter footindex='1'/>
   </el-container>
 </template>
 
 <script>
   import myHeader from './login/header.vue'
-  import myFooter from './login/footer.vue'
+  import myFooter from '../footer.vue'
   import listbody from './login/components/listbody.vue'
     export default {
         name: 'console',

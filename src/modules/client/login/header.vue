@@ -20,7 +20,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .header-nav-fix{
     position: fixed!important;
     top: 0;

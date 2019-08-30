@@ -25,7 +25,7 @@ import recommend from './components/Recommend.vue'
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .mainContent{
   background-color: rgb(246, 246, 246);
 }

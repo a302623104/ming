@@ -136,7 +136,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .sec_kill{
   margin: 10px 10px 10px;
   padding-bottom: 20px;

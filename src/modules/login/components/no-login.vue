@@ -67,7 +67,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .nologin{
   .header{
     width: 100%;
