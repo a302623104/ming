@@ -15,7 +15,7 @@
               <i class="icon_select"></i>
               <i class="icon_shop"></i>
                 <span>{{index.shop}}<i class="icon_arrow" v-if="index.shop !== '京东自营'"></i></span>
-              <div class="more">优惠券</div>
+              <div class="more"></div>
             </dt>
             <dd v-for="item in index.shoplist">
               <div class="item">
