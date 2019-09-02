@@ -78,6 +78,8 @@
     .xiaoyuan{
       width: 100%;
       padding: 10px 10px 10px 10px;
+      max-width: 1320px;
+      margin: 0 auto;
       .maintitle{
         img{
           width: 100%;

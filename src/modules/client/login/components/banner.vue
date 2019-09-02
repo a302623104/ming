@@ -1,11 +1,11 @@
 <template>
-<!--  <div class="block">-->
+  <div class="block">
     <el-carousel trigger="click" :style="{height:boxHeight + 'px'}" class="banner-top" arrow="never">
       <el-carousel-item v-for="(value , index) in img" :key="index">
         <img :src="value.url" alt="" class="itemimg">
       </el-carousel-item>
     </el-carousel>
-<!--  </div>-->
+  </div>
 </template>
 
 <script>
@@ -43,10 +43,9 @@ export default {
 
 <style lang="scss">
   .block{
-    position: absolute;
-    top: 0;
     width: 100%;
-    height: 27%;
+    max-width: 1320px;
+    margin: 0 auto;
   }
   .el-carousel__container {
     height: 100% !important;

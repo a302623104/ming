@@ -124,7 +124,9 @@
     position: relative;
     top: -10px;
     z-index: 15;
-
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
     .adv {
       img {
         width: 100%;

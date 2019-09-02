@@ -50,7 +50,8 @@
   .recommend{
     width: 100%;
     padding: 10px;
-    margin-bottom: 50px;
+    max-width: 1320px;
+    margin: 0 auto 50px;
     .title{
       width: 100%;
       img{
