@@ -30,38 +30,36 @@
 <script>
   import $ from 'jquery'
     export default {
-        name: "listbody.vue",
-      data(){
-          return{
-            index:1,
-            menulist:[
-              {id:'1',name:'热门推荐'},
-              {id:'2',name:'手机数码'},
-              {id:'3',name:'家用电器'},
-              {id:'4',name:'电脑办公'},
-              {id:'5',name:'美妆护肤'},
-              {id:'6',name:'个护清洁'},
-              {id:'7',name:'汽车生活'},
-              {id:'8',name:'京东超市'},
-              {id:'9',name:'热门推荐'},
-              {id:'10',name:'男装'},
-              {id:'11',name:'男鞋'},
-              {id:'12',name:'女装'},
-              {id:'13',name:'女鞋'},
-              {id:'14',name:'童装'},
-              {id:'15',name:'运动户外'},
-              {id:'16',name:'食品生鲜'},
-              {id:'17',name:'二手产品'},
-              {id:'18',name:'玩具乐器'},
-              {id:'19',name:'钟表珠宝'},
+      data () {
+          return {
+            index: 1,
+            menulist: [{ id: '1', name: '热门推荐' },
+              { id: '2', name: '手机数码' },
+              { id: '3', name: '家用电器' },
+              { id: '4', name: '电脑办公' },
+              { id: '5', name: '美妆护肤' },
+              { id: '6', name: '个护清洁' },
+              { id: '7', name: '汽车生活' },
+              { id: '8', name: '京东超市' },
+              { id: '9', name: '热门推荐' },
+              { id: '10', name: '男装' },
+              { id: '11', name: '男鞋' },
+              { id: '12', name: '女装' },
+              { id: '13', name: '女鞋' },
+              { id: '14', name: '童装' },
+              { id: '15', name: '运动户外' },
+              { id: '16', name: '食品生鲜' },
+              { id: '17', name: '二手产品' },
+              { id: '18', name: '玩具乐器' },
+              { id: '19', name: '钟表珠宝' },
             ],
             boxHeight:650,
             boxtop:0,
             sortData: [
               [
                 {
-                  "title": "热门分类",
-                  "list": [
+                  'title': '热门分类',
+                  'list': [
                     {"url": "https://img14.360buyimg.com/focus/s140x140_jfs/t27136/183/1628977274/31007/a6f7ed55/5be6ebd8Nb07ef492.png", "name": "手机"},
                     {"url": "https://img30.360buyimg.com/focus/s140x140_jfs/t1/21233/40/7634/13890/5c6d039bE8a65d667/aef9581abcc85725.png", "name": "耳机"},
                     {"url": "https://img14.360buyimg.com/focus/s140x140_jfs/t27400/283/1600620667/15106/a935e7bd/5be6f2e1Nfa8d9d6e.png", "name": "路由器"},
