@@ -8,7 +8,7 @@
           text-color="#000"
           active-text-color="#e93b3d"
           active-background="#fff">
-          <el-menu-item :index="value.id" @click="resettop(value.id)" v-for="value in menulist" :data-id="value.id">
+          <el-menu-item :index="value.id" @click="resettop(value.id)" v-for="value,index in menulist" :data-id="value.id" :key="index">
             <span slot="title">{{value.name}}</span>
           </el-menu-item>
         </el-menu>

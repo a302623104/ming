@@ -1,7 +1,7 @@
 module.exports = {
-  publicPath:'./',
-  devServer:{
-    host:'0.0.0.0'
+  publicPath: './',
+  devServer: {
+    host: '0.0.0.0'
   },
     pages: {
         console: {
@@ -18,19 +18,19 @@ module.exports = {
           title: '首页',
           chunks: ['client']
         },
-        login:{
+        login: {
           entry: 'src/modules/login/login.js',
           template: 'public/login.html',
           filename: 'login.html',
           title: '用户',
           chunks: ['login']
       },
-      shopcar:{
+      shopcar: {
         entry: 'src/modules/shopcar/shopcar.js',
         template: 'public/shopcar.html',
         filename: 'shopcar.html',
         title: '购物车',
         chunks: ['shopcar']
       }
-    },
+    }
 }

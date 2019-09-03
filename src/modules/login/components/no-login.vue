@@ -8,8 +8,8 @@
     </div>
     <div class="main">
       <div class="inputgroup">
-        <input type="text" class="admin" placeholder="用户名/邮箱/已验证手机">
-        <input type="password" class="password" placeholder="请输入密码">
+        <input type="text" class="admin" placeholder="用户名/已验证手机" v-model="username">
+        <input :type="seen" class="password" placeholder="请输入密码" v-model="password">
         <button class="checkpwd" @click="changemode()"></button>
         <button class="forget">忘记密码</button>
       </div>
@@ -17,7 +17,7 @@
         <el-button round class="loginbtn login" @click="setuser()">登 录</el-button>
         <el-button round class="loginbtn loginonce">一键登录</el-button>
         <a href="javascript:void(0)" class="messge">短信验证码登录</a>
-        <a href="javascript:void(0)" class="phone">手机快速注册</a>
+        <router-link to="/login.html/register" class="phone">手机快速注册</router-link>
       </div>
     </div>
     <div class="otherlogin">
@@ -29,30 +29,40 @@
 <script>
     export default {
         name: "no-login",
+      data(){
+          return{
+            username:'',
+            password:'',
+            seen:'password'
+          }
+      },
       methods:{
           setuser(){
-            let username = document.getElementsByClassName('admin')[0].value;
-            sessionStorage.setItem('user',username);
-            return this.$store.commit('setuser',username)
+            let postsent = "username="+this.username+"&password="+this.password+""
+            let ajax = new XMLHttpRequest();
+            ajax.open('post','http://localhost/checklogin.php',true);
+            ajax.setRequestHeader('content-type','application/x-www-form-urlencoded');
+            ajax.send(postsent);
+            ajax.onreadystatechange = () => {
+              if(ajax.readyState == 4 && ajax.status == 200){
+                let result = ajax.responseText;
+                if(result){
+                  sessionStorage.setItem('user',this.username);
+                  return this.$store.commit('setuser',this.username)
+                }
+              }
+            }
           },
         changemode(){
-          let pwdinput = document.getElementsByClassName('password');
           let thisbtn = document.getElementsByClassName('checkpwd')[0];
-            if(!this.seen){
-              pwdinput[0].setAttribute('type','text')
-              this.seen = true;
+            if(this.seen === 'password'){
+              this.seen = 'text';
               thisbtn.style.backgroundImage = 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB5UlEQVR4Ae1YJXQsQRD8zOYzmTD52Hgdjg2zDvp3571J3HkXZloKg40KM1NXOPMyO8fY9V4f7HZX1zC8YDAYDAaDEQ2YmJj4q+t6iaZp7WS9ZItku7Db3714Bx/4hoXopaWl9ySmikwjXND3pTt266shFhxBFz4zM/OOarKOhCxDkC8GDnCBMyjiKWE6mYnk/jRwgjvQ4iso2YFExCn6OX03Uo1m0e8kqtUvMPzGM7y79TmVcBwgR6DEN0tqbpfMOTU19dtdLvgiBrESzmZ/zzCtkkRtVMPfvOVFLDgkrdHqF/HU9DnPkG/T80K891OOInCKeZDbJ2LTNP8T0bpQ65uGYWTKYi4vL1+STxn5jtytA7e/y/BOFgdOcAuFWIcGX7qOSyA8RCK7xYxEdNrMNJ3wsSsEcghxLq/EW5YVTwnPBbJqu5qXihcKYdcSyCH4n0OLN7OOUyAaV/iXeTDnlym4xgV/pzfdp18gyVf4j7hbAPgqCpAv+Pd7U4DVxySqeV42p8vWDtU6IcSsRlIBsD78EQsQBV0oCgZxFEyjEbCQkc+RuJBF/lYiAjZzhbLNHG+nFQca2A69c3hxoHGoDjR8pJT014xAHerBHcz7oHp/XauAC9cq0X+xxVeLDAaDwWAw/IsraH8effh8nP4AAAAASUVORK5CYII=)'
             }else{
-              pwdinput[0].setAttribute('type','password')
-              this.seen = false;
+              this.seen = 'password';
               thisbtn.style.backgroundImage = 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAl5JREFUaAXtlE1rE2EQx/PSQIkphQihHhcUklNIcilUihYEDx76FXwBBSt4LkIpiF/ACAq+XPwAPXhoEdoiBHrIC7mYgIUclYIBMYbSuIm/wa5s1s2TtY2IMA/MzjPPzPxn5r/PbiikSxlQBpQBZUAZUAaUAWVAGVAGlAFlQBlQBpSBf8FAeFzRSqUyT8zVSCTyNpfLlcbFT8Jfq9UW+v3+FbA2C4XCngnTOADNFwaDgQBMIXY4HF4G8I0J8LQ+al6j5gY4UeQ7NeepWRmFGxnlOD5fREvzsqIAv4adCz/NyT8FW2pIrWN0qS09jFzGAZh+CzlyZc/atr31N4YQTMGm1qxTT2pLD47tp40D5PP59zBy35NocT9L5XL5ouf8xKZgCSYAlhtEaksP7jPv3vgNOMHcyxeA3XBs0TDT56wYi8VWs9nsN7cv6L5er5/p9XqPwFoBa4hMzl5y92+Owwo0AODRarX6BH3bB/ATxYrxePxpJpP57OP/7ajRaJztdrt3wFvBOecNAO8ZzN9F216f1w40gJPEm1hjv0Zhv7xDCu7i3+aXW0I+sj9AZKW4IueQBfZL5F9CTyNDi/wBB+swvz7kMBh+jRjCQyHexCINPEcm+jei+Q/ILZh/Z2zA4/zjASS/1WpNt9vtBwwhV+DXX8ODHdT8QuPFZDL50LKsw6BJTtyJBnCSm83mTKfTuU4D9xjmvHMeRJOzT87jRCLxKp1Ofw2S4xdzqgHcgHwfMsAScpnGLHSKJlMSgy3fwgF2C72DbHPP99G6lAFlQBlQBpQBZUAZUAaUgf+YgR8RmtPGSJ6MGgAAAABJRU5ErkJggg==)'
             }
         }
-      },
-      data(){
-          return{
-            seen:false
-          }
       },
       created: function () {
         if (sessionStorage.getItem('user')) {
@@ -63,12 +73,13 @@
             this.setuser()
           }
         }
-      }
+      },
     }
 </script>
 
 <style lang="scss" scoped>
 .nologin{
+  position: absolute;
   .header{
     width: 100%;
     text-align: center;
@@ -120,7 +131,7 @@
         bottom: 20px;
         right: 70px;
         outline: 0;
-        border:0; 
+        border:0;
       }
       .forget{
         position: absolute;

@@ -5,7 +5,7 @@
       </div>
       <el-row>
         <el-col :span="12" class="recommendlist">
-          <img src="https://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/71511/33/7775/148580/5d5bb3ffE8d8b4413/a1ea6a8f689d44ff.jpg!q70.dpg.webp" alt="">
+          <img src="https://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/71511/33/7775/148580/5d5bb3ffE8d8b4413/a1ea6a8f689d44ff.jpg" alt="">
           <div class="info">
             <p class="titletext">松下（Panasonic）蒸烤箱一体机家用台式蒸汽烤箱 双层大容量多功能智能电烤箱NU-SC300B</p>
             <p class="price">¥ <span class="pricenumber">3999</span></p>
@@ -13,7 +13,7 @@
           <div class="like">看相似</div>
         </el-col>
         <el-col :span="12" class="recommendlist">
-          <img src="https://img12.360buyimg.com/mobilecms/s372x372_jfs/t27460/317/1078051935/121917/2922a15d/5bc0552aNaf99683f.jpg!q70.dpg.webp" alt="">
+          <img src="https://img12.360buyimg.com/mobilecms/s372x372_jfs/t27460/317/1078051935/121917/2922a15d/5bc0552aNaf99683f.jpg" alt="">
           <div class="info">
             <p class="titletext">三星（SAMSUNG）512GB SSD固态硬盘 SATA3.0接口 860 PRO（MZ-76P512B</p>
             <p class="price">¥ <span class="pricenumber">1099</span></p>
@@ -21,7 +21,7 @@
           <div class="like">看相似</div>
         </el-col>
         <el-col :span="12" class="recommendlist">
-          <img src="https://img12.360buyimg.com/mobilecms/s372x372_jfs/t27460/317/1078051935/121917/2922a15d/5bc0552aNaf99683f.jpg!q70.dpg.webp" alt="">
+          <img src="https://img12.360buyimg.com/mobilecms/s372x372_jfs/t27460/317/1078051935/121917/2922a15d/5bc0552aNaf99683f.jpg" alt="">
           <div class="info">
             <p class="titletext">三星（SAMSUNG）512GB SSD固态硬盘 SATA3.0接口 860 PRO（MZ-76P512B</p>
             <p class="price">¥ <span class="pricenumber">1099</span></p>
@@ -29,7 +29,7 @@
           <div class="like">看相似</div>
         </el-col>
         <el-col :span="12" class="recommendlist">
-          <img src="https://img12.360buyimg.com/mobilecms/s372x372_jfs/t27460/317/1078051935/121917/2922a15d/5bc0552aNaf99683f.jpg!q70.dpg.webp" alt="">
+          <img src="https://img12.360buyimg.com/mobilecms/s372x372_jfs/t27460/317/1078051935/121917/2922a15d/5bc0552aNaf99683f.jpg" alt="">
           <div class="info">
             <p class="titletext">三星（SAMSUNG）512GB SSD固态硬盘 SATA3.0接口 860 PRO（MZ-76P512B</p>
             <p class="price">¥ <span class="pricenumber">1099</span></p>

@@ -2,12 +2,12 @@
   <div class="sec_kill">
     <div class="title">
       <div class="title_img"></div>
-      <strong class="timmer">18点场</strong>
+      <strong class="timmer">{{nexttime}}点场</strong>
       <span class="kill-time">{{date}}</span>
       <a href="javascript:void(0)" class="more"> 更多秒杀 <i></i></a>
     </div>
     <div class="kill-list">
-      <ul v-bind:style="{left:boxleft + 'px',width:boxWidth + 'px'}" @touchstart="touchStart" @touchmove="move" @touchend="touchend">
+      <ul v-bind:style="{left:boxleft + 'px',width:boxWidth + 'px'}" @touchstart="killtouchStart" @touchmove="killmove" @touchend="killtouchend">
         <li>
           <img src="https://img14.360buyimg.com/n1/s150x150_jfs/t1/25081/32/1314/338210/5c10cec4Ee8452155/21d8bd31f72bd8a5.jpg.dpg" alt="">
           <div class="money">
@@ -79,6 +79,7 @@
           boxleft:0,
           save:0,
           boxWidth:800,
+          nexttime:0
         }
       },
       methods:{
@@ -86,7 +87,8 @@
           let _this = this; // 声明一个变量指向Vue实例this，保证作用域一致
           this.timer = setInterval(() => {
             let hour = new Date().getHours();
-            hour = 17-hour;
+            this.nexttime = new Date().getHours() +1;
+            hour = hour - hour;
             hour = hour < 10 ? ('0' + hour) : hour;
             let min = new Date().getMinutes();
             min = 60-min;
@@ -102,13 +104,12 @@
           let li = document.getElementsByClassName('kill-list')[0].children[0].children;
           this.boxWidth = (li[0].offsetWidth * li.length) + 10*li.length
         },
-        touchStart(e){
+        killtouchStart(e){
           this.startCilck = e.touches[0].clientX
         },
-        move(e) {
+        killmove(e) {
           clearTimeout(this.timeOutEvent);
           this.timeOutEvent = 0;
-          e.preventDefault();
           this.moveleft = e.touches[0].clientX-this.startCilck;
           this.boxleft = this.save + this.moveleft;
           if(this.boxleft > 0){
@@ -119,7 +120,7 @@
             this.boxleft = -this.boxWidth + width
           }
         },
-        touchend(){
+        killtouchend(){
           this.save = this.boxleft;
         },
         test(){

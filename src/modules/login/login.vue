@@ -4,7 +4,11 @@
       <myFoot footindex="4"/>
     </div>
     <div v-else>
-      <nologin/>
+      <transition name="fade">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </transition>
     </div>
 </template>
 
@@ -29,4 +33,10 @@
 
 <style lang="scss">
   @import "../../assets/css/style.scss";
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 </style>

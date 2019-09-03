@@ -17,6 +17,7 @@ export default {
         {url:'https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/45822/37/1258/360866/5cefb71fE95298b80/052ef4b9d125778a.jpg!cr_1125x549_0_72!q70.jpg.dpg'},
         {url:'https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/39882/15/14870/51042/5d5edab2E26c7108d/c20d14b16571084a.jpg!cr_1125x549_0_72!q70.jpg.dpg'},
         {url:'https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/53446/33/8365/90165/5d5ea867Eb1bc8918/ca49fa512d0b7a84.jpg!cr_1125x549_0_72!q70.jpg.dpg'},
+        {url:'https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/39244/20/11655/282768/5d2d4acdEf9eeaab7/d7b3a83358911b47.jpg!cr_1125x549_0_72!q70.jpg.dpg'},
         {url:'https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/39244/20/11655/282768/5d2d4acdEf9eeaab7/d7b3a83358911b47.jpg!cr_1125x549_0_72!q70.jpg.dpg'}
       ],
       boxHeight:200
