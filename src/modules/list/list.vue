@@ -11,9 +11,9 @@
 </template>
 
 <script>
-  import myHeader from './login/header.vue'
+  import myHeader from './header.vue'
   import myFooter from '../footer.vue'
-  import listbody from './login/components/listbody.vue'
+  import listbody from './components/listbody.vue'
     export default {
         name: 'console',
       components:{

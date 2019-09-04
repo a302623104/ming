@@ -1,16 +1,15 @@
 import Vue from 'vue'
-import Console from './Console.vue'
+import Console from './index.vue'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import store from './store.js'
+import $ from 'jquery'
 
 Vue.use(require('vue-wechat-title'))
 Vue.use(ElementUI);
-
+Vue.prototype.$ = $;
 
 new Vue({
     router,
-    store,
     render: h => h(Console)
-}).$mount('#console')
+}).$mount('#index')

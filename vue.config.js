@@ -4,19 +4,19 @@ module.exports = {
     host: '0.0.0.0'
   },
     pages: {
-        console: {
-            entry: 'src/modules/console/console.js',
-            template: 'public/console.html',
-            filename: 'console.html',
+        list: {
+            entry: 'src/modules/list/list.js',
+            template: 'public/list.html',
+            filename: 'list.html',
             title: '分类',
-            chunks: ['console']
+            chunks: ['list']
         },
-        client: {
-          entry: 'src/modules/client/client.js',
+        index: {
+          entry: 'src/modules/index/index.js',
           template: 'public/index.html',
           filename: 'index.html',
           title: '首页',
-          chunks: ['client']
+          chunks: ['index']
         },
         login: {
           entry: 'src/modules/login/login.js',

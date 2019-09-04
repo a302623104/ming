@@ -5,9 +5,9 @@
         <div class="userinfo">
           <div class="headimg"></div>
           <div class="info">
-            <p>用户名:{{$store.state.user}}</p>
+            <p>用户名:{{usermessage.name}}<i @click="open()" class="changename"></i></p>
             <span class="notic">京享值 2560</span>
-            <span class="notic">小白信用89.3</span>
+            <span class="notic">小白信用 {{usermessage.credit}}</span>
           </div>
           <div class="logout" @click="logout()">
             退出
@@ -101,12 +101,53 @@ export default{
       recommend,
       adminheader
     },
+  data(){
+    return{
+      usermessage:'',
+    }
+  },
+  props:{
+      username:{
+        type:String
+      }
+  },
     methods:{
       logout(){
         sessionStorage.removeItem('user');
         window.location.reload();
+      },
+      open() {
+        this.$prompt('请输入昵称', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          inputPattern: /^[\u4e00-\u9fa5]{2,6}$|^[a-zA-Z0-9_]{4,12}$/,
+          // inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+          inputErrorMessage: '昵称格式为中文2-6字，英文数字4-12字'
+        }).then(({ value }) => {
+          this.usermessage.name = value
+          let postsent = "username="+this.username+"&name="+value+""
+          let ajax = new XMLHttpRequest();
+          ajax.open('post','http://localhost/changname.php',true);
+          ajax.setRequestHeader('content-type','application/x-www-form-urlencoded');
+          ajax.send(postsent);
+        }).catch(() => {
+
+        });
       }
     },
+  created:function(){
+    let postsent = "username="+this.username+"";
+    let ajax = new XMLHttpRequest();
+    ajax.open('post','http://localhost/getmessage.php',true);
+    ajax.setRequestHeader('content-type','application/x-www-form-urlencoded');
+    ajax.send(postsent);
+    ajax.onreadystatechange = () =>{
+      if(ajax.readyState == 4 && ajax.status == 200){
+        let result = ajax.responseText;
+        this.usermessage = JSON.parse(result)
+      }
+    }
+  }
 }
 </script>
 
@@ -157,6 +198,16 @@ export default{
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
+        }
+        .changename{
+          flex-shrink: 0;
+          margin: 0 0 0 4px;
+          width: 12px;
+          height: 12px;
+          display: inline-block;
+          vertical-align: middle;
+          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAzUExURUdwTP///////////////////////////////////////////////////////////////8/RimEAAAAQdFJOUwB3a5m4Veb3H6QDji7WgAgChXPEAAAApElEQVQoz3WSSwLDIAhEMUHBtkm4/2mL+Ld1VvGN4gQByGKHgehCxzCKI0lVHCzfsYp85YcsOsp++ZGd4anOaccp3RMnXgpHPbDw4jC4MQ8+apzp0wF2/v4EdYwLQugcQJ3MJQANXJ26pGYYf7WIVEstXEthzzlwvTzH5YVrXPvBa+VpZ1rfmmfisTTR39fUXWvitu37h9o/bRoG+TsMbXxCH58vmgwXoPcjyaAAAAAASUVORK5CYII=);
+          background-size: 12px;
         }
       }
       .logout{

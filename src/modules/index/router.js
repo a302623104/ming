@@ -10,7 +10,7 @@ export default new VueRouter({
       {
       path: '/',
       name: 'login',
-      component: () => import(/* webpackChunkName: "about" */ './login/Login.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './Login.vue'),
       meta: { title: '主页' }
       }
     ]

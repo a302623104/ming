@@ -4,7 +4,7 @@
         <a href="http://localhost:8080/" class="link"><img src="../assets/homepage.png" alt="">首页</a>
       </el-col>
       <el-col :span="4">
-        <a href="http://localhost:8080/console.html" class="link"><img src="../assets/fenlei.png" alt="">分类</a>
+        <a href="http://localhost:8080/list.html" class="link"><img src="../assets/fenlei.png" alt="">分类</a>
       </el-col>
       <el-col :span="4">
         <a href="javascript:void (0)" class="link"><img src="../assets/pinggou.png" alt="">拼购</a>

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import myHeader from './login/header.vue'
+  import myHeader from './header.vue'
   import myFooter from '../footer.vue'
     export default {
         name: 'client',

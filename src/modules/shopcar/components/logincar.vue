@@ -13,7 +13,7 @@
           <dl v-for="index in carlist">
             <dt>
               <i class="icon_select"></i>
-              <i class="icon_shop"></i>
+              <i v-bind:class="[{'icon_jd':(index.shop == '京东自营')},{'icon_shop':(index.shop != '京东自营')}]"></i>
                 <span>{{index.shop}}<i class="icon_arrow" v-if="index.shop !== '京东自营'"></i></span>
               <div class="more"></div>
             </dt>
@@ -94,7 +94,7 @@
                 },
                 {
                   'url':'',
-                  'text':'酷狗（KUGOU）小酷M1无线运动蓝牙耳机 霍尔磁吸开关 入耳式 安卓苹果手机耳机 IPX4级防水 续航10h 咖啡金',
+                  'text':'酷狗（KUGOU）小酷M1无线运动蓝牙耳机 霍尔磁吸开关 入耳式 安卓苹果手机耳机 IPX4级防水 续航10h',
                   'img':'https://img10.360buyimg.com/mobilecms/s117x117_jfs/t6886/147/472036614/124090/966b1bdc/5976ec4cN703b48d1.jpg!q70.dpg.webp',
                   'style': '咖啡金',
                   'server': '无服务',

@@ -1,6 +1,6 @@
 <template>
     <div v-if="user">
-      <admin/>
+      <admin v-bind:username="this.$store.state.user"/>
       <myFoot footindex="4"/>
     </div>
     <div v-else>
@@ -26,7 +26,7 @@
     computed:{
        user(){
          return this.$store.state.user
-       }
+       },
     },
   }
 </script>
